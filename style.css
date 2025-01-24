@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     color: #096b90;
 }
 
+/* Header Styles */
 header {
     background: #042B44;
     color: white;
@@ -16,14 +18,27 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header h1:hover {
+    color: #FF5733;
+    transform: scale(1.1);
 }
 
 header p {
     font-size: 1.2rem;
+    transition: letter-spacing 0.3s ease, color 0.3s ease;
 }
 
+header p:hover {
+    letter-spacing: 2px;
+    color: #FFDD00;
+}
+
+/* Navigation Styles */
 nav {
-    background:#096b90;
+    background: #096b90;
     color: white;
     padding: 10px 0;
 }
@@ -38,35 +53,88 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li:hover {
+    transform: translateY(-5px);
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #FF5733;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #FFDD00;
 }
 
+/* Container Styles */
 .container {
     width: 80%;
     margin: 20px auto;
     max-width: 1200px;
 }
-.container img {
 
+.container img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    box-shadow:  0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
+
+.container img:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: 0 0 15px #042B44;
+    filter: brightness(1.2);
+}
+
 .container a {
     color: #042b90;
     text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
+.container a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #FF5733;
+    transition: width 0.3s ease;
+}
+
+.container a:hover {
+    color: #FF5733;
+}
+
+.container a:hover::before {
+    width: 100%;
+}
+
+/* Section and Heading Styles */
 section {
     margin: 20px 0;
 }
@@ -77,6 +145,12 @@ h2 {
     display: inline-block;
     padding-bottom: 5px;
     margin-bottom: 15px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+h2:hover {
+    color: #FF5733;
+    border-color: #FF5733;
 }
 
 .skills-list {
@@ -86,12 +160,53 @@ h2 {
 
 .skills-list li {
     margin: 5px 0;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.skills-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #096b90;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.skills-list li:hover {
+    color: #FF5733;
+    transform: translateX(10px);
+}
+
+.skills-list li:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Footer Styles */
 footer {
-    background:#096b90;
+    background: #096b90;
     color: white;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer:hover {
+    background: #042B44;
+    transform: scale(1.01);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFDD00;
+    text-decoration: underline;
 }
