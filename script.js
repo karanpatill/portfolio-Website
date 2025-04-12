@@ -1,33 +1,64 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+// Add smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
-// Theme toggle functionality
-const toggleButton = document.createElement('button');
-toggleButton.textContent = 'Toggle Theme';
-toggleButton.style.position = 'fixed';
-toggleButton.style.bottom = '20px';
-toggleButton.style.right = '20px';
-toggleButton.style.padding = '10px 15px';
-toggleButton.style.backgroundColor = '#096b90';
-toggleButton.style.color = '#fff';
-toggleButton.style.border = 'none';
-toggleButton.style.borderRadius = '5px';
-toggleButton.style.cursor = 'pointer';
-document.body.appendChild(toggleButton);
+// Enhanced intersection observer for scroll animations
+const sections = document.querySelectorAll('section');
+const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '-50px 0px -50px 0px'
+};
 
-let isDarkTheme = false;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Animate list items with delay
+            const listItems = entry.target.querySelectorAll('li');
+            listItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, index * 100);
+            });
 
-toggleButton.addEventListener('click', () => {
-    isDarkTheme = !isDarkTheme;
-    document.body.style.backgroundColor = isDarkTheme ? '#333' : '#fff';
-    document.body.style.color = isDarkTheme ? '#fff' : '#333';
-    toggleButton.style.backgroundColor = isDarkTheme ? '#555' : '#007bff';
+            // Animate education items with delay
+            const educationItems = entry.target.querySelectorAll('.education-item');
+            educationItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, index * 200);
+            });
+
+            // Animate skill categories with delay
+            const skillItems = entry.target.querySelectorAll('.skill-category');
+            skillItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, index * 150);
+            });
+        }
+    });
+}, observerOptions);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// Enhanced scroll progress bar
+const scrollProgress = document.querySelector('.scroll-progress-bar');
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = `${scrolled}%`;
 });

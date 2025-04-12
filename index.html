@@ -7,59 +7,129 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <header class="hero">
         <div class="container">
-            <h1>Karan Patil</h1>
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQGWHb5e3a8vBQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722238190897?e=1743033600&v=beta&t=BMHHrDhXqKZWX70EeN0FKzlGGTcgM3jowTdPOLxtUG8" alt="photo">
-            <p>Full-Stack Developer | JAVA | DSA  </p>
+            <h1>KARAN PATIL</h1>
+            <div class="contact-info">
+                <a href="tel:+918956634577" class="contact-item">
+                    <i class="icon phone"></i>
+                    +91 8956634577
+                </a>
+                <a href="mailto:karanpatil82005@gmail.com" class="contact-item">
+                    <i class="icon email"></i>
+                    karanpatil82005@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/karanpatill" target="_blank" class="contact-item">
+                    <i class="icon linkedin"></i>
+                    linkedin.com/in/karanpatill
+                </a>
+                <a href="https://github.com/karanpatill" target="_blank" class="contact-item">
+                    <i class="icon github"></i>
+                    github.com/karanpatill
+                </a>
+                <span class="contact-item">
+                    <i class="icon location"></i>
+                    Kurli, Sangli, Maharashtra, India, 415311
+                </span>
+            </div>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <main class="container">
+        <section class="objective">
+            <h2>OBJECTIVE</h2>
+            <p>Second-year Computer Science student skilled in Data Structures and Full Stack Development. Eager to learn, collaborate, and contribute to real-world software projects.</p>
+        </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hi, I’m Karan Patil, a passionate Full-Stack Developer and Tech Enthusiast, currently pursuing a BTech in Computer Science from D.Y. Patil Education Society. With expertise in HTML, CSS, JavaScript, Node.js, MongoDB, and MySQL, I specialize in building user-focused and scalable web solutions. I am always eager to learn new technologies and tools to stay up-to-date with the latest trends in the industry.
-                
-                Let’s connect and create something amazing together!</p>
-        </div>
-    </section>
+        <section class="technical-summary">
+            <h2>TECHNICAL SUMMARY</h2>
+            <p>Proficient in full-stack web development using Node.js, Express, MongoDB, and React. Experienced in building RESTful APIs, user authentication, and responsive UIs. Knowledgeable in Git, Linux, and Model–View–Presenter (MVP) architecture.</p>
+        </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Python, Java, C</li>
-                <li>HTML, CSS, JavaScript</li>
-                <li>Node.js, Express.js</li>
-                <li>MongoDB, MySQL</li>
-                <li>RESTful APIs, CRUD Operations</li>
-                
+        <section class="education">
+            <h2>EDUCATION</h2>
+            <div class="education-item">
+                <h3>B.Tech in Computer Science</h3>
+                <p>D.Y. Patil Education Society, Kolhapur</p>
+                <p class="year">Expected 2027</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h3>HSC</h3>
+                    <p>66%, 2023</p>
+                </div>
+                <div class="education-item">
+                    <h3>SSC</h3>
+                    <p>74%, 2021</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>TECHNICAL EXPERIENCE</h2>
+            <div class="project">
+                <h3>Nestly – Airbnb Clone (Full Stack Web App)</h3>
+                <div class="project-links">
+                    <a href="#" class="btn">Live Demo</a>
+                    <a href="#" class="btn">View Code</a>
+                </div>
+                <ul>
+                    <li>Built a full-stack app to list and manage rental properties with user authentication and CRUD features.</li>
+                    <li>Used Passport.js for session management, integrated Google Maps API, and deployed via Render.</li>
+                    <li>Tech Stack: Node.js, Express, MongoDB, Bootstrap, MVP architecture</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <p>Java, Python, C</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, JavaScript, ReactJS, Bootstrap</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <p>Node.js, Express, REST APIs, Passport.js</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <p>MongoDB, MySQL</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Other Tools</h3>
+                    <p>Git, Linux, MVP Architecture</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>CERTIFICATIONS</h2>
+            <ul>
+                <li>Full Stack Web Development Course (Completed)</li>
+                <li>Data Structures Course (Completed)</li>
+                <li>C++ Certificate – IIT Bombay (80%)</li>
+                <li>Goldman Sachs Virtual Experience</li>
+                <li>AWS Intro to Generative AI</li>
             </ul>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:KaranPatil825@gmail.com">KaranPatil825@gmail.com</a></p>
-            <p>Phone: <a href="tel:+918956634577">+91 89566 34577</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/karanpatil" target="_blank">linkedin.com</a></p>
-            <p>GitHub: <a href="https://github.com" target="_blank">github.com</a></p>
-            <p>Instagram: <a href="https://instagram.com/kode.journey" target="_blank">kode.journey</a></p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Karan Patil. All rights reserved.</p>
-    </footer>
+        <section class="leadership">
+            <h2>LEADERSHIP</h2>
+            <ul>
+                <li>Core member of GDSC; mentor peers in coding and project building.</li>
+                <li>Guide juniors to improve problem-solving and collaborate on GitHub.</li>
+            </ul>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
